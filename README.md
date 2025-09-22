@@ -23,8 +23,9 @@
 -   **データベース:**
     -   H2 Database (インメモリ)
 -   **ビルドツール:**
-    -   Maven
+    -   Gradle
 
+// ...existing code...
 ## 🚀 実行方法
 
 1.  **リポジトリをクローンします。**
@@ -37,14 +38,14 @@
     cd todoapp
     ```
 
-3.  **Mavenを使用してアプリケーションを実行します。**
+3.  **Gradleを使用してアプリケーションを実行します。**
     ```bash
-    ./mvnw spring-boot:run
+    ./gradlew bootRun
     ```
-    (もし `./mvnw` が実行できない場合は `mvn spring-boot:run` を試してください)
 
 4.  **ブラウザでアクセスします。**
     [http://localhost:8080/todos](http://localhost:8080/todos)
+// ...existing code...
 
 ---
 このREADMEは、プロジェクトの概要を他の人が理解するのに役立ちます。// filepath: README.md
