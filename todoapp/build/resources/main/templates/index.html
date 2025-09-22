@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Todo List</h1>
+    <form action="/todos" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">タスク名</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">詳細</label>
+            <textarea class="form-control" id="description" name="description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">追加</button>
+    </form>
+    <h2>タスク一覧</h2>
+    <ul class="list-group">
+        <li th:each="todo : ${todos}" class="list-group-item">
+            <input type="checkbox" th:checked="${todo.completed}" disabled>
+            <span th:text="${todo.title}"></span>
+            <a th:href="@{'/todos/edit/' + ${todo.id}}" class="btn btn-sm btn-warning">編集</a>
+            <a th:href="@{'/todos/delete/' + ${todo.id}}" class="btn btn-sm btn-danger">削除</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
